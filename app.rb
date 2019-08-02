@@ -28,6 +28,8 @@ get '/' do
 end
 
 get '/quotes.js' do
+  content_type 'application/javascript'
+
   <<~JS
     quotesLoader(#{JSON.generate(QUOTES)});
   JS
